@@ -34,4 +34,4 @@
    * In a browser, visit your [localhost](http://localhost:3000)
 
 
-![trackio_capture](https://user-images.githubusercontent.com/4805625/32510546-fd1ff266-c3be-11e7-9e90-c6689d1fbb24.PNG)
+![trackio_capture2](https://user-images.githubusercontent.com/4805625/32510929-4bdf27b8-c3c0-11e7-9be0-f0433e529e83.PNG)
