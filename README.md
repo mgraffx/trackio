@@ -25,6 +25,5 @@ Once the service is running, use a DB authoring tools the create a database name
 ## Accessing the Webapp:
   You should now have a running webapp
   In a browser, visit http://localhost:3000
-  [link to localhost]( http://localhost:3000)
 
 
