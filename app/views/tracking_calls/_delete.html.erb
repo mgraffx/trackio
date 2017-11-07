@@ -1,0 +1,9 @@
+<h1>Delete A Tracking Call</h1>
+
+<%= form_for :tracking_datum, remote:true, method:"tracking_calls/delete", url:"delete" do |f| %>
+
+<%= f.label :"id", class: "fieldslabel" %>:
+<%= f.text_field :id , class: "fieldsinput" %><br />
+
+<%= f.submit "Delete specified Record" %>
+<% end %>

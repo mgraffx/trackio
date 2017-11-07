@@ -1,0 +1,26 @@
+
+  <% if @calls.empty? || @calls.nil? %>
+   <b>No Record found to match query parameteres provided</b>
+  <% else %>
+  <% columns = [] %>
+  <% columns = @calls.column_names %>
+    <% @calls.each do |data| %>
+        <div style="border:1px solid black">
+          <%= form_for :tracking_datum, remote:true, method:"post", url:"tracking_calls/edit_results" do |f| %>
+          <div id="result_block">
+            <% columns.each do |key| %>
+            <div id="data_block">
+                <br>
+                <%= f.label :"#{key}", class: "fieldslabel" %>
+                <%= f.text_field :"#{key}", value: "#{data.send(key)}", class: "fieldsinput" %>
+            </div>
+            <% end %>
+            <br>
+            <div>
+               <%= f.submit "Update Tracking Data", :id => "edit_submit", :class => "submitbtn" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+<% end %>

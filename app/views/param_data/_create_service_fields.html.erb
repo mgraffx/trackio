@@ -1,0 +1,27 @@
+<div id="create_service_fields" class="sdivs">
+  <h3> Add a Tracking field  </h3>
+  <%= form_for :create_service_fields, remote: "true", method:"post",  url:"param_data/create_service_fields" do |f| %>
+
+    <%= f.label :service, 'Service Name', class: "fieldslabel"  %>
+    <% options = options_from_collection_for_select(@services, 'name', 'name' ) %>
+    <%= f.select :service,  options, {:prompt => "Select a Service"}, class: "selections" %><br>
+
+
+    <%= f.label :field_name, class: "fieldslabel" %>
+    <%= f.autocomplete_field :field_name, autocomplete_field_field_name_param_data_path, 'data-auto-focus' => true, 'min-length' => 0, class: "fieldsinput" %>
+    <%= f.label :auto_complete, class: "sm_text" %><br>
+
+    <%= f.label :description, 'Description', class: "fieldslabel"  %>
+    <%= f.text_field :description, class: "fieldsinput" %><br>
+
+    <%= f.label :event_type, 'Click Type', class: "fieldslabel"  %>
+    <% type_options = options_from_collection_for_select(@event_types, 'id', 'name' ) %>
+    <%= f.select :event_type,  type_options, {:prompt => "Select a Click Type"}, class: "selections" %><br>
+
+    <%= f.submit "Add Service Field", class: "button" %>
+  <% end %>
+    <div id="create_service_field_errors" name="create_service_field_errors" class="sdiv">
+    </div>
+</div>
+
+

@@ -1,0 +1,20 @@
+<h3>Search for a tracking call</h3>
+
+<%= form_for :tracking_datum, remote: true, method:"post", url:"/tracking_calls/search" do |f| %>
+  
+  <%= f.label :"Service Name", class: "fieldslabel"  %>
+  <% options = options_from_collection_for_select(@services, 'name', 'name' ) %>
+  <%= f.select :service_name_search,  options, {:prompt => "Select a Service"}, class: "selections" %><br />
+
+  <%= f.label :"Environment", class: "fieldslabel" %><%= f.text_field :environment, class: "fieldsinput" %><br />
+
+  <%= f.label :"Test Page Name", class: "fieldslabel" %><%= f.text_field :test_page_name, class: "fieldsinput"  %><br />
+
+  <%= f.label :"Page Type", class: "fieldslabel" %><%= f.text_field :page_type, class: "fieldsinput"  %><br />
+  
+  <%= f.label :"Action Type", class: "fieldslabel" %><%= f.text_field :action_type, class: "fieldsinput"  %><br />
+  <br />
+
+
+  <%= f.submit "Search" %>
+<% end %> 

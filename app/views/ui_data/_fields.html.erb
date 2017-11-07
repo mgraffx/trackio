@@ -1,0 +1,11 @@
+<button id="makeCall" class: "fields">Submit Tracking Call</button><br>
+<%= label_tag :event_type, 'Click Type', class: "fieldslabel"  %>
+<br>
+<%= select_tag "events",  options_from_collection_for_select(EventType.all, 'id', 'name', 1 ), prompt: "Select a Click Type" %>
+<br>
+<%= label_tag(:"tracking_host", "tracking_host", class: "fieldslabel")%>
+<%= text_field :"tracking", "host", class: "fieldsinput" %><br>
+<% @fields.each do |field| %>
+  <%= label_tag(:"#{field}", "#{field}:", class: "fieldslabel") %>
+  <%= text_field_tag(:"#{field}","",size: 20, class: "fieldsinput") %><br>
+<% end %>

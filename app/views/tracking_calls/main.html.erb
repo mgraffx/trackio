@@ -1,0 +1,19 @@
+<div id="container" >
+  <div id="tc_left" >
+  <div id="create" class="sdiv">
+        <%= render "new" %>
+      </div>
+      <div id="delete" class="sdiv" >
+        <%= render "delete" %>
+      </div>
+      <div id="query_edit" class="sdiv" >
+        <%= render "/tracking_calls/search, call: @call " %>
+      </div>
+  </div>
+  <div id="tc_right" style="overflow:scroll; >
+  <h2 align="center" >Search Results</h2>
+        <div id="edit_results" style="overflow:scroll;">
+
+        </div>
+  </div>
+</div>

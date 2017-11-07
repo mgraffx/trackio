@@ -1,0 +1,28 @@
+<h1 align="center"> Trackio </h1>
+<h3 align="center"> Tracking Call Catalog</h3>
+
+<div>
+  <%= image_tag "" , :style => "width:100%;" %>
+</div>
+
+
+<button id="acc1" class="accordion" >Manage Tracking Services</button>
+<div id="panel1" class="panel" style="overflow:auto;">
+  <%= render "param_data/main" %>
+</div>
+
+<button id="acc2" class="accordion" >Manage Tracking Data</button>
+<div id="panel2" class="panel" style="overflow:auto;">
+  <%= render "tracking_calls/main" %>
+</div>
+
+
+<button id="acc3" class="accordion" >Tracking Call Display and Runner</button>
+<div id="panel3" class="panel" style="overflow:auto;">
+  <%= render "ui_data/main" %>
+</div>
+
+
+
+
+

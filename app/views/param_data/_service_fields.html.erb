@@ -1,0 +1,12 @@
+<div id="edit_service_fields" >
+  <%= form_for :edit_service_fields, remote: "true", method:"post",  url:"param_data/service_fields", :html=>{:id=>'service_fields'} do |f| %>
+    <%= f.label :edit_service_fields, 'Providers'  %>
+    <% options = options_from_collection_for_select(@services, 'name', 'name' ) %>
+    <%= f.select :service,  options, {:prompt => "Select a Service"}, :onchange => "$('#service_fields').submit();" %>
+  <% end %>
+
+  <div id="edit_fields" name="edit_fields" >
+  </div>
+  <div id="edit_field_errors" name="edit_field_errors">
+  </div>
+</div>

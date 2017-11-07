@@ -1,0 +1,68 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Style the buttons that are used to open and close the accordion panel */
+body {
+  background-color:#002499;
+  min-width: 1000px;
+  height: 100%;
+  max-height: 100%;
+}
+
+h3 {color: #002499;
+
+}
+
+h1{color: #009991;
+
+}
+
+button.accordion {
+    background-color: #009991;
+    color: #00000;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center, bold;
+    font-size: 14px;
+    border: solid, bold;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: #b1e2c1;
+    max-height: 0;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 1500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+    background-color: #5ed385;
+}
+
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    background-color: #002499;
+    align:middle;
+    padding-top: 2px;
+    padding-right: 6px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+button.accordion.active:after {
+    content: '\02796'; /* Unicode character for "minus" sign (-) */
+    background-color: #54d37f;
+    align:middle
+}

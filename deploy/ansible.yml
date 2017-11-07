@@ -1,0 +1,43 @@
+---
+##-----------------------
+#  Ansible Playbook file for TREC UI
+#
+#  Requires the following variables to be specified via --extra-vars
+#  env: sandbox
+#
+##-----------------------
+- hosts: "{{ env }}"
+  user: service-igor
+  vars:
+    su_user: service-igor
+    approot: /var/www
+  tasks:
+  - name: what user am i
+    shell: /usr/bin/whoami
+    register: result
+
+  - debug: var=result verbosity=2
+
+  - name: follow the path
+    shell: echo $PATH
+    register: thepath
+
+  - debug: var=thepath verbosity=2
+
+  - name: ensure directory exists
+    action: "command mkdir -p {{ approot }}"
+
+  - name: copy build to server
+    action: "copy src={{ source }} dest=/tmp/deploy.tgz"
+
+  - name: untar build on server
+    action: "command sudo tar xvfz /tmp/deploy.tgz -C {{ approot }}"
+
+  - name: set all directories and file owned by service-igor
+    action: "command sudo chown {{ su_user }}:platform /var/www/trec --recursive"
+
+  - name: restart app
+    shell: /var/www/trec/deploy/deploy.sh
+    sudo: yes
+    sudo_user: "{{ su_user }}"
+

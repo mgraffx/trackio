@@ -1,0 +1,21 @@
+
+  <div id="selected-service" class="left" >
+    <h3>Tracking Call Fields</h3>
+    <%= form_for :service, remote: "true", method:"post",  url:"ui_data/services", :html=>{:id=>'services'} do |f| %>
+
+      <%= f.label :service, 'Service Name'  %>
+      <% options = options_from_collection_for_select(Service.all, 'id', 'name' ) %>
+      <%= f.select :id, options, {:prompt => "Select a Service"}, :onchange => "$('#services').submit();" %><br>
+
+    <% end %>
+    <div id="fields" >
+    </div>
+  </div>
+  <div id="selected-fields" class="center" >
+    <h3> TREC Tracking Call  </h3>
+    <%= form_tag("field_data", method: "post", remote: "true", class: "data", role: "form", :style => "margin-left: 15px") do %>
+        <%= label_tag(:"field_data", "Paste Tracking Call below") %><br>
+        <%= text_area "query_string", "input",  cols: 30, rows: 60 %>
+    <% end %>
+  </div>
+

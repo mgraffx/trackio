@@ -1,0 +1,20 @@
+<div id="container" >
+  <div id="top-section" class="container" >
+    <div id="service_fields" class="full">
+      <div id="trec_request" >
+        <%= render "/ui_data/services", services: @services %>
+      </div>
+    </div>
+  </div>
+  <div id="bottom-section" class="container">
+    <h3>Console </h3>
+    <div id="console" class="sdiv">
+    </div>
+    <div id="query_results" class="sdiv">
+      <button type="button" id="run_query" >Run Query</button>
+      <input type="text" id="hive_query"><br>
+      <textarea id="hive_results" rows="4" cols="50">
+      </textarea>
+    </div>
+  </div>
+</div>

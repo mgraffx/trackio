@@ -1,0 +1,26 @@
+
+<h3>Store a new tracking call</h3>
+
+<%= form_for :tracking_datum, remote:true, method:"post", url:"tracking_calls/new" do |f| %>
+
+<%= f.label :"service_name_create", class: "fieldslabel" %>:
+<% options = options_from_collection_for_select(@services, 'name', 'name' ) %>
+<%= f.select :service_name_create,  options, {:prompt => "Select a Service"}, class: "selections" %><br>
+
+<%= f.label :"host_name", class: "fieldslabel" %><%= f.text_field :host_name , class: "fieldsinput" %><br />
+
+<%= f.label :"query_string", class: "fieldslabel" %><%= f.text_field :query_string , class: "fieldsinput" %><br />
+
+<%= f.label :"action_type", class: "fieldslabel" %><%= f.text_field :action_type , class: "fieldsinput" %><br />
+
+<%= f.label :"platform", class: "fieldslabel" %><%= f.text_field :platform , class: "fieldsinput" %><br />
+
+<%= f.label :"search_tag", class: "fieldslabel" %><%= f.text_field :test_page_name , class: "fieldsinput" %><br />
+<br />
+<%= f.submit "Create New Tracking Call Entry" %>
+
+<% end %>
+<div id="create_track_record_errors" name="create_track_record_errors" class="sdiv">
+</div>
+
+

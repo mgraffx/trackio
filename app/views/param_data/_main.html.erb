@@ -1,0 +1,11 @@
+<div id="container" >
+  <div id="top-section" class="container" >
+    <div id="left" class="tc_left" >
+      <%= render "param_data/create_service" %>
+      <%= render "param_data/create_service_fields", service_fields: @service_fields %>
+    </div>
+  </div>
+  <div id="right" class="tc_right" >
+    <%= render "param_data/service_fields", service_fields: @service_fields %>
+  </div>
+</div>

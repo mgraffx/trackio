@@ -1,0 +1,15 @@
+<div id="edit_service_fields" >
+  <h3>Add a Service</h1>
+  <%= form_for :service, remote:true, method:"post", url:"param_data/create_service" do |f| %>
+    <%= f.label :"Enter Service Name", class: "fieldslabel" %>:
+    <%= f.text_field :service_name, class: "fieldsinput" %>
+    <br>
+    <%= f.label :"Domain Name ", class: "fieldslabel" %>:
+    <%= f.text_field :domain_name, class: "fieldsinput" %>
+    <br>
+    <%= f.submit "Add Service", id: "add_service", class: "button" %>
+  <% end %>
+
+  <div id="create_service_errors" name="create_service_errors" class="sdiv">
+  </div>
+</div>

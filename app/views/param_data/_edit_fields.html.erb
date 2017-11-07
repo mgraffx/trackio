@@ -1,0 +1,23 @@
+<% @service_fields.each do |field| %>
+  <div id=<%="#{field['field_name']}"%> >
+  <%= form_for :edit_field_description, remote: "true", method:"post",  url:"param_data/edit_field_description" do |f| %>
+  <%= f.label :"#{field['field_name']}", "#{field['field_name']}  :  ", class: "important_fieldslabel" %>
+  <br>
+  <%= f.label :description, 'Description', class: "fieldslabel" %>
+  <%= f.text_field :description, value: "#{field['description']}", size: 20, class: "fieldsinput" %>
+  <br>
+  <%= f.label :event_type, 'Click Type', class: "fieldslabel"  %>
+  <% options = options_from_collection_for_select(@event_types, 'id', 'name',{:selected => "#{field['event_type']}", :prompt => true} ) %>
+  <%= f.select :event_type,  options, {:prompt => "Select a Click Type"}, class: "fieldsinput" %>
+  <br>
+  <%= f.hidden_field :service, :value => "#{field['service']}" %>
+  <%= f.hidden_field :field, :value => "#{field['field_name']}" %>
+  <br>
+  <%= f.submit "Update Field Association Details", class: "button" %>
+  <%= f.submit "Delete Field Association", class: "button" %>
+  <% end %>
+  <br>
+  <div id=<%= "edit_description_#{field[1]}" %> >
+  </div>
+  </div>
+<% end %>
