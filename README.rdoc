@@ -1,28 +1,27 @@
 == README
+Requires Ruby 2.4.2 installed
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+How I run this
+I am running this on Windows10 with the ubuntu subsystem
+I use the subsystem for commands like git, rvm, bundle and rails
+I used HeidiSql(free windows app) for DB creation and alterations as it allows me to CRUD all aspects of the schema.
 
-Things you may want to cover:
+Description:
+Simple UI for storing and keeping track of tracking services used on a site, what parameters are relevant and descriptions for each.
+Ability to store specific tracking calls for reference that are accessible for use as test verification via rest API.
 
-* Ruby version
+Database:
+A mysql database service needs to be running locally and a "track" DB created with the associated sql file<>.
+Once the service is running, use a DB authoring tools the create a database name track and rund the sql file to create the schema.
 
-* System dependencies
+Starting the project:
+With a running DB, navigate to the workspace for the project and run the following in order
+workspace/trackio$ gem install bundler
+workspace/trackio$ bundler install
+workspace/trackio$ rails server
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Accessing the Webapp:
+You should now have a running webapp
+In a browser, visit localhost:3000
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
