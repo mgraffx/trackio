@@ -4,6 +4,7 @@
 ## What you should know
   1. How to install ruby (rvm or rbenv) and bundler (google helps)
   2. How to run mysql, create a DB and setup access
+  3. How to git a repo
   
 
 ## How I run this
