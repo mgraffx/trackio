@@ -10,8 +10,9 @@
 ## How I run this
   1. I am running this on Windows10 with the ubuntu subsystem
   2. I use the subsystem for commands like git, rvm, bundle and rails
-  3. I used HeidiSql(free windows app/ donations welcome) for DB creation 
+  3. I use [HeidiSql](https://www.heidisql.com/)(free windows app/ donations welcome / awesome tool) for DB creation 
   and alterations as it allows me to CRUD all aspects of the schema.
+ 
 
 ## Description:
   > Simple UI for storing and keeping track of tracking services used on a site, what parameters are 
