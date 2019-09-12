@@ -1,2 +1,2 @@
 [sandbox]
-dev-sandbox-01.use1.huffpo.net    ansible_connection=ssh ansible_ssh_user=deployuser ANSIBLE_SSH_ARGS=""
+dev-sandbox-01.use1.somewhere.net    ansible_connection=ssh ansible_ssh_user=deployuser ANSIBLE_SSH_ARGS=""
